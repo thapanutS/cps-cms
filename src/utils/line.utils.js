@@ -6,7 +6,7 @@ class LineUtil {
     console.log(`LINE_LIFF_ID : ${process.env.VUE_APP_LINE_LIFF_ID}`);
     return liff
       .init({
-        liffId: 1656906142-rkvJJPwG,
+        liffId: '1656906142-rkvJJPwG',
       })
       .then(() => {
         console.log("LIFF INIT Success");
