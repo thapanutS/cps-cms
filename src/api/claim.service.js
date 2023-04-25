@@ -1,8 +1,8 @@
 import axios from "axios";
-
+const api_url = 'https://odd-rose-magpie-veil.cyclic.app'
 export const getClaimList = async () => {
   try {
-    const { data } = await axios.get(`${process.env.VUE_APP_API_URL}/claim`);
+    const { data } = await axios.get(`${api_url}/claim`);
     return data;
   } catch (error) {
     console.log("[claimService] getClaimList error ==> ", error);
@@ -12,7 +12,7 @@ export const getClaimList = async () => {
 export const confirmClaim = async (payload) => {
   try {
     return await axios.patch(
-      `${process.env.VUE_APP_API_URL}/claim/confirm`,
+      `${api_url}/claim/confirm`,
       payload
     );
   } catch (error) {
@@ -23,7 +23,7 @@ export const confirmClaim = async (payload) => {
 export const cancelClaim = async (payload) => {
   try {
     return await axios.patch(
-      `${process.env.VUE_APP_API_URL}/claim/cancel`,
+      `${api_url}/claim/cancel`,
       payload
     );
   } catch (error) {

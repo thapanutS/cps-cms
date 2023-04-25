@@ -1,12 +1,12 @@
 import axios from "axios";
-
+const api_url = 'https://odd-rose-magpie-veil.cyclic.app'
 export const createEvent = async (event) => {
-  return await axios.post(`${process.env.VUE_APP_API_URL}/event/create`, event);
+  return await axios.post(`${api_url}/event/create`, event);
 };
 
 export const getEventList = async () => {
   try {
-    const { data } = await axios.get(`${process.env.VUE_APP_API_URL}/event`);
+    const { data } = await axios.get(`${api_url}/event`);
     return data;
   } catch (error) {
     console.log("[eventService] getEventList error ==> ", error);
@@ -16,7 +16,7 @@ export const getEventList = async () => {
 export const getEventById = async (id) => {
   try {
     const { data } = await axios.get(
-      `${process.env.VUE_APP_API_URL}/event/${id}`
+      `${api_url}/event/${id}`
     );
     return data;
   } catch (error) {
@@ -27,7 +27,7 @@ export const getEventById = async (id) => {
 export const updateEvent = async (eventEdited) => {
   try {
     return await axios.patch(
-      `${process.env.VUE_APP_API_URL}/event/update`,
+      `${api_url}/event/update`,
       eventEdited
     );
   } catch (error) {
@@ -38,7 +38,7 @@ export const updateEvent = async (eventEdited) => {
 export const multicastEvent = async (payload) => {
   try {
     return await axios.post(
-      `${process.env.VUE_APP_API_URL}/event/multicast`,
+      `${api_url}/event/multicast`,
       payload
     );
   } catch (error) {
